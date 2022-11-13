@@ -19,6 +19,7 @@ int sum_of_prime() {
     for (int i = 0; i < 7; i++) {
         std::cout << numbers[i] << " - ";
     }
+
     return 0;
 }
 
@@ -31,6 +32,7 @@ int F_to_C() {
     celsius = (fahrenheit - 32) * 0.5556;
 
     std::cout << "Celsius - " << celsius;
+    
     return 0;
 }
 
@@ -47,6 +49,7 @@ int pos_Neg_check() {
     if (number > 0) {
         std::cout << "Number is positive";
     }
+
     return 0;
 }
 
@@ -66,9 +69,11 @@ int first_five_deviders() {
         if (remainder == 0) {
             numbers.push_back(i);
         }
+
         if (numbers_length == 5) {
             break;
         }
+        
         i += 1;
     }
 
@@ -80,6 +85,37 @@ int first_five_deviders() {
 }
 
 
+int convertNumberToDateTime(int number) {
+    int days = 0;
+    int hr = 0;
+    int min = 0;
+    bool done = false;
+
+
+    do {
+       
+        if (number >= 24) {
+            days++;
+            number -= 24;
+        }
+        else if (number >= 60) {
+
+            hr++;
+            number -= 60;
+        }
+        else if(number >= 1) {
+            min = number;
+            
+        }
+        else {
+            done = true;
+        }
+    } while (done == false);
+
+    std::cout << days << " days, " << hr << " hours, " << min << " minues" << std::endl;
+
+    return 0;
+}
 
 
 
@@ -90,5 +126,6 @@ int main()
     //F_to_C();
     //pos_Neg_check();
     //first_five_deviders();
+    //convertNumberToDateTime(120);
 }   
 
