@@ -118,6 +118,31 @@ int convertNumberToDateTime(int number) {
 }
 
 
+int findLastAngleOfTriangle(int angle1, int angle2) {
+
+    float lastangle = 180 - (angle1 + angle2);
+    std::cout << lastangle << std::endl;
+    return 0;
+}
+
+int dynamicTrianglePrint(int number) {
+
+    int lines = number;
+    int stars = 1;
+
+    for (int i = 0; i < lines; i++) {
+        for (int i = 0; i < number; i++) {
+            std::cout << " " << std::flush;
+        }
+        for (int i = 0; i < stars; i++) {
+            std::cout << "*" << std::flush;
+        }
+        stars += 2;
+        number -= 1;
+        std::cout << " " << std::endl;
+    }
+    return 0;
+}
 
 
 int main()
@@ -127,5 +152,9 @@ int main()
     //pos_Neg_check();
     //first_five_deviders();
     //convertNumberToDateTime(120);
+    //findLastAngleOfTriangle(30, 60);
+    dynamicTrianglePrint(10);
+
+
 }   
 
