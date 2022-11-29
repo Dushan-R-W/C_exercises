@@ -145,6 +145,38 @@ int dynamicTrianglePrint(int number) {
 }
 
 
+/*
+You work in a toy car workshop, and your job is to build toy cars from a collection of parts.
+Each toy car needs 4 wheels, 1 car body, and 2 figures of people to be placed inside.
+Given the total number of wheels, car bodiesand figures available, how many complete toy cars can you make ?
+*/
+int toy_car_workshop(int wheels, int body, int figures) {
+
+    int number_of_cars = 0;
+
+    while (true) {
+        if (wheels >= 4) {
+            if (body >= 1) {
+                if (figures >= 2) {
+                    number_of_cars += 1;
+                    wheels -= 4;
+                    body -= 1;
+                    figures -= 2;
+                }
+                else break;
+            }
+            else break;
+        }
+        else break;
+    }
+
+    std::cout << "Max number of cars = " << number_of_cars << std::endl;
+
+    return 0;
+}
+
+
+
 int main()
 {
     //sum_of_prime();
@@ -153,7 +185,10 @@ int main()
     //first_five_deviders();
     //convertNumberToDateTime(120);
     //findLastAngleOfTriangle(30, 60);
-    dynamicTrianglePrint(10);
+    //dynamicTrianglePrint(10);
+    //toy_car_workshop(40, 100, 200);
+
+
 
 
 }   
