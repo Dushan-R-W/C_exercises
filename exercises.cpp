@@ -139,7 +139,7 @@ int dynamicTrianglePrint(int number) {
         }
         stars += 2;
         number -= 1;
-        std::cout << " " << std::endl;
+        std::cout << "" << std::endl;
     }
     return 0;
 }
@@ -176,6 +176,30 @@ int toy_car_workshop(int wheels, int body, int figures) {
 }
 
 
+//Create a function that creates a box based on dimension n.
+int dynamicBoxPrint(int number) {
+
+    int lines = number;
+    int hash = 1;
+
+    for (int i = 0; i < lines; i++) {
+        if (i == 0 || i == lines-1) {
+            for (int i = 0; i < lines; i++) {
+                std::cout << "#" << std::flush;
+            }
+        }
+        else {
+            std::cout << "#" << std::flush;
+            for (int i = 0; i < lines-2; i++) {
+                std::cout << " " << std::flush;
+            }
+            std::cout << "#" << std::flush;
+        }
+        std::cout << "" << std::endl;
+    }
+        
+    return 0;
+}
 
 int main()
 {
@@ -187,9 +211,7 @@ int main()
     //findLastAngleOfTriangle(30, 60);
     //dynamicTrianglePrint(10);
     //toy_car_workshop(40, 100, 200);
-
-
-
+    //dynamicBoxPrint(10);
 
 }   
 
