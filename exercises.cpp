@@ -201,6 +201,33 @@ int dynamicBoxPrint(int number) {
     return 0;
 }
 
+
+//Create a function that returns the number of characters shared between two words.
+int letters_shared_between_words(std::string word1, std::string word2) {
+
+    std::string longWord = word2;
+    std::string shortWord = word1;
+    std::vector<char> matchingLetters;
+
+    if(word1.length() >= word2.length()){
+        longWord = word1;
+        shortWord = word2;
+    }
+
+    for (int i = 0; i < longWord.length(); i++) {
+        for (int t = 0; t < shortWord.length(); t++) {
+            if (longWord[i] == shortWord[t] && (std::find(matchingLetters.begin(), matchingLetters.end(), longWord[i]) == matchingLetters.end())) {
+                matchingLetters.push_back(longWord[i]);
+                std::cout << longWord[i] << std::endl;
+            }
+        }
+    }
+    std::cout <<"\n" << matchingLetters.size() << " matching letters found!!" << std::endl;
+    
+    return 0;
+}
+
+
 int main()
 {
     //sum_of_prime();
@@ -212,6 +239,10 @@ int main()
     //dynamicTrianglePrint(10);
     //toy_car_workshop(40, 100, 200);
     //dynamicBoxPrint(10);
+    //letters_shared_between_words("dog", "cat");
+
+
+
 
 }   
 
